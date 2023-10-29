@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
 </div>
 <div class="upper-btn-box">
     <div class=" left-box">
-        <button id="addHotel"><i class="fas fa-plus"></i>&nbsp; Add Guide</button>
+        <button id="addHotel"><i class="fas fa-plus"></i>&nbsp; Add Hotel</button>
         <button style="background-color: #33B5E6;"><i class="fas fa-eraser" ></i> &nbsp; Clear Filtering</button>
 
     </div>
@@ -30,7 +31,6 @@
     <table>
         <tr>
             <th>Hotel Id</th>
-            <th>Package Id</th>
             <th>Hotel Name</th>
             <th>Category</th>
             <th>Location</th>
@@ -67,7 +67,6 @@
             <td>Hello world</td>
             <td>Hello world</td>
             <td>Hello world</td>
-            <td>Hello world</td>
 
             <td>
                 <button><i class="fas fa-eye"></i></button>
@@ -85,41 +84,76 @@
             <img src="../assets/images/_Mx_ Delinquent_ _ Various!Tbhk x reader.jpg" width="150" height="150" alt="" id="img1">
             <i class="fa fa-plus" id="plusIcon"></i>
             <input type="file" id="inputFile">
-            <h4 id="guideImg">Hotel Image</h4>
+            <h4 id="hotelImg">Hotel Image</h4>
         </div>
 
 
     <div class="right-model">
         <form id="register-form">
             <div class="input-box">
-                <label for="IdGuide">Guide Id</label>
-                <input class="input" type="text" id="IdGuide">
+                <label for="idHotel">Hotel Id</label>
+                <input class="input" type="text" id="idHotel">
             </div>
             <div class="input-box">
-                <label for="name">Guide Name</label>
+                <label for="name">Hotel Name</label>
                 <input class="input" type="text" id="name">
             </div>
             <div class="input-box">
-                <label for="guideAge">Guide Age</label>
-                <input class="input" type="text" id="guideAge">
+                <label for="category">Category</label>
+                <input class="input" type="text" id="category">
             </div>
             <div class="input-box">
-                <label for="guideAddress">Guide Address</label>
-                <input class="input" type="text" id="guideAddress">
+                <label for="location">location</label>
+                <input class="input" type="text" id="location">
             </div>
             <div class="input-box">
-                <label for="guideContact">Guide Contact</label>
-                <input class="input" type="text" id="guideContact">
+                <label for="coordinate">Location_with_coordinate</label>
+                <input class="input" type="text" id="coordinate">
             </div>
             <div class="input-box">
-                <label for="guideExperience">Experience</label>
-                <input  class="input" type="text" id="guideExperience">
+                <label for="email">Hotel Email address</label>
+                <input  class="input" type="text" id="email">
             </div>
             <div class="input-box">
-                <label for="guideGender">Gender</label>
-                <input class="input" type="text" id="guideGender">
+                <label for="telNum1">Contact number 1</label>
+                <input class="input" type="text" id="telNum1">
             </div>
-
+            <div class="input-box">
+                <label for="telNum2">Contact number 2</label>
+                <input class="input" type="text" id="telNum2">
+            </div>
+            <div class="input-box">
+                <label for="FullBoardRoomDouble">FullBoardRoomDouble</label>
+                <input class="input" type="text" id="FullBoardRoomDouble">
+            </div>
+            <div class="input-box">
+                <label for="HalfBoardRoomDouble">HalfBoardRoomDouble</label>
+                <input class="input" type="text" id="HalfBoardRoomDouble">
+            </div>
+            <div class="input-box">
+                <label for=" FullBoardRoomTriple"> FullBoardRoomTriple</label>
+                <input class="input" type="text" id=" FullBoardRoomTriple">
+            </div>
+            <div class="input-box">
+                <label for="HalfBoardRoomTriple">HalfBoardRoomTriple</label>
+                <input class="input" type="text" id="HalfBoardRoomTriple">
+            </div>
+            <div class="input-box">
+                <label for=  "isPetsAllowed">isPetsAllowed</label>
+                <input class="input" type="text" id="isPetsAllowed">
+            </div>
+            <div class="input-box">
+                <label for="hotelFee">hotelFee</label>
+                <input class="input" type="text" id="hotelFee">
+            </div>
+            <div class="input-box">
+                <label for="CancellationCriteria">CancellationCriteria</label>
+                <input class="input" type="text" id="CancellationCriteria">
+            </div>
+            <div class="input-box">
+                <label for="remarks">remarks</label>
+                <input class="input" type="text" id="remarks">
+            </div>
             <div class="input-box">
                 <button id="registerBtn" class="buttonRegister">Register</button>
                 <button disabled="disabled" style="background-color: coral" class="buttonUpdate">Update</button>
@@ -129,8 +163,171 @@
 </div>
 
 
-    <script src="/js/hotel.js"></script>
+    <script src="../js/hotel.js"></script>
 
 </body>
 
+</html>-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Form</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewPort" content="width=device=width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/HotelForm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+<div class="header">
+    <h5><i class="fas fa-guide"></i>Hotel Form...</h5>
+</div>
+<div class="upper-btn-box">
+    <div class=" left-box">
+        <button id="addGuide"><i class="fas fa-plus"></i>&nbsp; Add Hotel</button>
+        <button style="background-color: #33B5E6;"><i class="fas fa-eraser" ></i> &nbsp; Clear Filtering</button>
+
+    </div>
+    <div class="right-box"></div>
+    <i class="fas fa-search" id="searchIcon"></i>
+    <input type="text" id="guideId" placeholder="Enter Guide Id">
+    <button class="searchBtn">Search</button>
+</div>
+
+
+<div class="table-box" id="table-data">
+    <table>
+        <tr>
+            <th>Hotel Id</th>
+            <th>Hotel Name</th>
+            <th>Category</th>
+            <th>Location</th>
+            <th>Hotel image</th>
+            <th>Hotel Email address</th>
+            <th>Contact Number 2</th>
+            <th>FullBoardRoomDouble</th>
+            <th>HalfBoardRoomDouble</th>
+            <th>FullBoardRoomTriple</th>
+            <th>HalfBoardRoomTriple</th>
+            <th>isPetsAllowed</th>
+            <th>CancellationCriteria</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+
+            <td>
+                <button><i class="fas fa-eye"></i></button>
+                <button style="background-color: red;"><i class="fas fa-trash"></i></button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="model" >
+    <i class="fa fa-times-circle close-icon" id="close-modal"></i>
+    <div class="left-model">
+        <div class="img-box">
+            <img src="../assets/images/_Mx_ Delinquent_ _ Various!Tbhk x reader.jpg" width="150" height="150" alt="" id="img1">
+            <i class="fa fa-plus" id="plusIcon"></i>
+            <input type="file" id="inputFile">
+            <h4 id="guideImg">Guide Image</h4>
+        </div>
+
+
+    </div>
+
+
+    <div class="right-model">
+        <form id="register-form">
+            <div class="input-box">
+                <label for="idHotel">Hotel Id</label>
+                <input class="input" type="text" id="idHotel">
+            </div>
+            <div class="input-box">
+                <label for="name">Hotel Name</label>
+                <input class="input" type="text" id="name">
+            </div>
+            <div class="input-box">
+                <label for="category">Category</label>
+                <input class="input" type="text" id="category">
+            </div>
+            <div class="input-box">
+                <label for="location">location</label>
+                <input class="input" type="text" id="location">
+            </div>
+          <!--  <div class="input-box">
+                <label for="coordinate">Location_with_coordinate</label>
+                <input class="input" type="text" id="coordinate">
+            </div>-->
+            <div class="input-box">
+                <label for="email">Hotel Email address</label>
+                <input  class="input" type="text" id="email">
+            </div>
+           <!-- <div class="input-box">
+                <label for="telNum1">Contact number 1</label>
+                <input class="input" type="text" id="telNum1">
+            </div>-->
+            <div class="input-box">
+                <label for="telNum2">Contact number 2</label>
+                <input class="input" type="text" id="telNum2">
+            </div>
+            <div class="input-box">
+                <label for="FullBoardRoomDouble">FullBoardRoomDouble</label>
+                <input class="input" type="text" id="FullBoardRoomDouble">
+            </div>
+            <div class="input-box">
+                <label for="HalfBoardRoomDouble">HalfBoardRoomDouble</label>
+                <input class="input" type="text" id="HalfBoardRoomDouble">
+            </div>
+            <div class="input-box">
+                <label for=" FullBoardRoomTriple"> FullBoardRoomTriple</label>
+                <input class="input" type="text" id=" FullBoardRoomTriple">
+            </div>
+            <div class="input-box">
+                <label for="HalfBoardRoomTriple">HalfBoardRoomTriple</label>
+                <input class="input" type="text" id="HalfBoardRoomTriple">
+            </div>
+            <div class="input-box">
+                <label for=  "isPetsAllowed">isPetsAllowed</label>
+                <input class="input" type="text" id="isPetsAllowed">
+            </div>
+           <!-- <div class="input-box">
+                <label for="hotelFee">hotelFee</label>
+                <input class="input" type="text" id="hotelFee">
+            </div>-->
+            <div class="input-box">
+                <label for="CancellationCriteria">CancellationCriteria</label>
+                <input class="input" type="text" id="CancellationCriteria">
+            </div>
+           <!-- <div class="input-box">
+                <label for="remarks">remarks</label>
+                <input class="input" type="text" id="remarks">
+            </div>
+-->
+            <div class="input-box">
+                <button id="registerBtn" class="buttonRegister">Register</button>
+                <button disabled="disabled" style="background-color: coral" class="buttonUpdate">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../js/guide.js"></script>
+</body>
 </html>

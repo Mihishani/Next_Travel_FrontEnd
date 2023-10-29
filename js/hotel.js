@@ -1,4 +1,4 @@
-var addBtn =document.querySelector("#addGuide");
+var addBtn =document.querySelector("#addHotel");
 var modal =document.querySelector(".model");
 var closeBtn=document.querySelector(".close-icon");
 addBtn.onclick=function (){
