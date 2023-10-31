@@ -1,5 +1,5 @@
 *{
-     padding: 0;
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
 
@@ -15,14 +15,14 @@
     font-size: 28px;
     color: #fff;
 }
-/*upper button box*/
-.upper-btn-box{
-    width: 100%;
-    height: 100px;
 
-    display: flex;
-    padding: 30px;
-}
+ .upper-btn-box{
+     width: 100%;
+     height: 100px;
+
+     display: flex;
+     padding: 30px;
+ }
 
 .upper-btn-box .left-box{
     width: 50%;
@@ -51,44 +51,42 @@
     color: #4286F5;
     padding: 10px;
 }
- #guideId{
+#hotelId{
     width: 70%;
     padding: 13px;
     outline: none;
     border: none;
     border-bottom: 3px solid #4286F5;
-     font-size: 18px;
-     font-family: Verdana;
-     font-weight: bold;
+    font-size: 18px;
+    font-family: Verdana;
+    font-weight: bold;
 }
- .searchBtn{
-     border: none;
-     outline: none;
-     background-color: orange;
-     padding: 10px;
-     font-size: 18px;
-     font-family: Verdana;
-     color: #fff;
-     margin:0px 10px;
+.searchBtn{
+    border: none;
+    outline: none;
+    background-color: orange;
+    padding: 10px;
+    font-size: 18px;
+    font-family: Verdana;
+    color: #fff;
+    margin:0px 10px;
 
+}
+
+ .table-box{
+     width: 100%;
+     padding: 30px;
  }
-
- /*Start Table coding*/
-.table-box{
-    width: 100%;
-    padding: 30px;
-}
 .table-box table{
     width: 100%;
- /*   border: 1px solid #ccc;*/
-    /*border-top: none;*/
+
 }
 
 .table-box table tr th{
-   border-right: 1px solid #ccc;
+    border-right: 1px solid #ccc;
     padding: 30px 0px 0px ;
     font-family: Verdana;
-    font-size: 15px;
+    font-size: 12px;
     border-bottom: 1px solid #ccc;
 }
 
@@ -97,6 +95,7 @@
     padding: 10px 0px 5px;
     text-align: center;
     font-family: Verdana;
+    font-size: 12px;
     border-bottom: 1px solid #ccc;
 }
 
@@ -111,21 +110,21 @@
     padding: 5px 0px 5px;
 }
 
-/*start model coding*/
-.model{
-    width: 0%;
-    height: 600px;
-    background: linear-gradient(135deg, white, #73C6B6);
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% ,-50%);
-    display: flex;
-    border-top: 20px groove #117864;
-    opacity:0 ;
-    z-index: -1;
-    transition: 0.5s ease-in-out;
-}
+
+ .model{
+     width: 0%;
+     height: auto;
+     background: linear-gradient(135deg, white, #73C6B6);
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50% ,-50%);
+     display: flex;
+     border-top: 20px groove #117864;
+     opacity:0 ;
+
+     transition: 0.5s ease-in-out;
+ }
 
 .model.active{
     opacity: 1;
@@ -168,66 +167,13 @@
     opacity: 0;
 
 }
-#guideImg{
+#hotelImg{
     position: relative;
     top: 100px;
     left: 10px;
     color: #4286F5;
 }
 
-
-#img2{
-    border-radius: 10px;
-}
-#plusIcon2{
-    font-size: 30px;
-    padding: 10px;
-    position: absolute;
-    top: 60px;
-    right: 90px;
-    color: #4286F5;
-}
-#inputFile2{
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 70px;
-    right: 80px;
-    opacity: 0;
-}
-#guideIdImg{
-    position: relative;
-    top: 100px;
-    left: 10px;
-    color: #4286F5;
-}
-
-
-#img3{
-    border-radius: 10px;
-}
-#plusIcon3{
-    font-size: 30px;
-    padding: 10px;
-    position: absolute;
-    top: 60px;
-    right: 90px;
-    color: #4286F5;
-}
-#inputFile3{
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 70px;
-    right: 80px;
-    opacity: 0;
-}
-#guideNICImg{
-    position: relative;
-    top: 100px;
-    left: 10px;
-    color: #4286F5;
-}
 
 .model .right-model{
     width: 70%;
@@ -242,7 +188,7 @@
 }
 
 .model .right-model .input-box label{
-    font-size: 22px;
+    font-size: 13px;
     font-weight: bold;
     font-family: sans-serif;
     margin: 20px 0px;
@@ -252,7 +198,7 @@
     width: 70%;
     margin: 10px 0px;
     border: none;
-    padding: 13px;
+    padding: 6px;
     outline: none;
     border-bottom: 3px solid #117864;
     background-color: transparent;

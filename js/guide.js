@@ -117,3 +117,351 @@ uploadpic.onchange=function (){
     }*/
     alert();
 }
+
+
+/*-------------------------------------functions---------------------------------------------------*/
+
+$(document).ready(()=>{
+    localStorage.setItem("guideAuthToken",JSON.stringify("eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyUm9sZSI6Ikd1aWRlQWRtaW4iLCJzdWIiOiJVc2VybmFtZSIsImlhdCI6MTY5ODQyNTM3MywiZXhwIjo0ODUyMDI1MzczfQ._5Vzoz7O45RWpAPNhXPNx6VKWbefOeVxb5q-NaRQHrA"))
+    $("#IdGuide").prop("disabled", true);
+    addTableField();
+
+});
+
+
+// save
+$(document).ready(() => {
+    $(document).on("click", "#registerBtn", () => {
+        if (!validator()) {
+            return swal("Operation failed!", "Please fill all the fields!", "error")
+        }
+
+        setTimeout(() => {
+            let guide = {
+/*                hotelID: "",
+                hotelName: $("#name").val(),
+                hotelCatageory: $("#category").val(),
+                hotelLocation: $("#location").val(),
+                hotelLocationWithCoordinates : $("#hotelLocationWithCoordinates").val(),
+                hotelEmail: $("#email").val(),
+                hotelContactNumber: $("#contact").val(),
+                isPetsAllowed: petSelected,
+                fullDbl: $("#fulldouble").val(),
+                halfDbl: $("#halfdouble").val(),
+                fullTpl: $("#fulltriple").val(),
+                halfTpl: $("#halftriple").val(),
+                cancellationCriteria: $("#cancellation").val(),
+                packageId: $("#PackageIdd").val()*/
+
+                guideId : "",
+                guideName : $("#name").val(),
+                guideAge : $("#guideAge").val(),
+                guideAddress : $("#guideAddress").val(),
+                guideContact : $("#guideContact").val(),
+                experience : $("#guideContact").val(),
+                gender : $("#guideGender").val()
+            }
+
+            $.ajax({
+                url: "http://localhost:8085/api/v1/guide/Gsave",
+                method: "POST",
+                headers: {
+                    "content-type": "application/json",
+                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("guideAuthToken"))
+                },
+                data: JSON.stringify(guide),
+                success: (response) => {
+                    if (response.statusCode === 200 || response.statusCode === 201) {
+                        addTableField();
+                        clearFields();
+                        swal("Done!", response.message, "success")
+                    } else {
+                        return swal("OOPS!", response.message, "error")
+                    }
+                }, error: (error) => {
+                    swal("OOPS!", "An error occurred while communicating with the server ! ", "error");
+                },
+            })
+        },5000)
+    })
+});
+
+// update
+$(document).ready(() => {
+    $(document).on("click", "#Update", () => {
+        if (!validator()) {
+            return swal("Operation failed!", "Please fill all the fields!", "error")
+        }
+
+        setTimeout(() => {
+            let hotel = {
+                hotelID: $("#HotelId").val(),
+                hotelName: $("#name").val(),
+                hotelCatageory: $("#category").val(),
+                hotelLocation: $("#location").val(),
+                hotelLocationWithCoordinates : $("#hotelLocationWithCoordinates").val(),
+                hotelEmail: $("#email").val(),
+                hotelContactNumber: $("#contact").val(),
+                isPetsAllowed: petSelected,
+                fullDbl: $("#fulldouble").val(),
+                halfDbl: $("#halfdouble").val(),
+                fullTpl: $("#fulltriple").val(),
+                halfTpl: $("#halftriple").val(),
+                cancellationCriteria: $("#cancellation").val(),
+                packageId: $("#PackageIdd").val()
+            }
+
+            $.ajax({
+                url: "http://localhost:8085/update",
+                method: "PUT",
+                headers: {
+                    "content-type": "application/json",
+                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("hotelAuthToken"))
+                },
+                data: JSON.stringify(hotel),
+                success: (response) => {
+                    if (response.statusCode === 200 || response.statusCode === 201) {
+                        addTableField();
+                        clearFields();
+                        swal("Done!", response.message, "success")
+                    } else {
+                        return swal("OOPS!", response.message, "error")
+                    }
+                }, error: (error) => {
+                    swal("OOPS!", "An error occurred while communicating with the server ! ", "error");
+                },
+            })
+        },5000)
+    })
+});
+
+//search
+$(document).ready(() => {
+    $(document).on("keydown", "#name", (event) => {
+
+        if (event.key === 'Enter') {
+            $.ajax({
+                url: "http://localhost:8085/getHotelByUserName?HotelName=" + $("#name").val(),
+                method: "GET",
+                headers: {
+                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("hotelAuthToken"))
+                },
+                success: (res) => {
+                    console.log(res.data)
+                    $("#PackageId").val(res.data.packageId);
+
+                    if (res.statusCode === 200 || res.statusCode === 201) {
+                        $("#HotelId").prop("disabled", false);
+                        $("#HotelId").val(res.data.hotelID);
+                        $("#HotelId").prop("disabled", true);
+                        $("#name").val(res.data.hotelName);
+                        $("#category").val(res.data.hotelCatageory);
+                        $("#hotelLocationWithCoordinates").val(res.data.hotelLocationWithCoordinates);
+                        $("#location").val(res.data.hotelLocation);
+                        $("#email").val(res.data.hotelEmail);
+                        $("#contact").val(res.data.hotelContactNumber);
+                        $("#fulldouble").val(res.data.fullDbl);
+                        $("#halfdouble").val(res.data.halfDbl);
+                        $("#fulltriple").val(res.data.fullTpl);
+                        $("#halftriple").val(res.data.halfTpl);
+                        $("#cancellation").val(res.data.cancellationCriteria);
+
+                        $("#PackageIdd").val(res.data.packageId);
+                        return swal("Done!", "success");
+
+                    }
+
+
+                    swal("OOPS!","error");
+                    clearFields();
+
+                },
+                error: (error) => {
+                    swal("OOPS!", "An error occurred while communicating with the server ! ", "error");
+                }
+            });
+        }
+    })
+});
+
+//delete
+$(document).ready(() => {
+    $(document).on("keydown", "#name", (event) => {
+
+        if (event.key === 'Enter') {
+
+
+            $.ajax({
+                url: "http://localhost:8085/getHotelByUserName?HotelName=" + $("#name").val(),
+                method: "GET",
+                headers: {
+                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("hotelAuthToken"))
+                },
+                success: (res) => {
+                    console.log(res.data)
+                    if (res.statusCode === 200 || res.statusCode === 201) {
+                        $("#HotelId").prop("disabled", false);
+                        $("#HotelId").val(res.data.hotelID);
+                        $("#HotelId").prop("disabled", true);
+                        $("#name").val(res.data.hotelName);
+                        $("#category").val(res.data.hotelCatageory);
+                        $("#location").val(res.data.hotelLocation);
+                        $("#hotelLocationWithCoordinates").val(res.data.hotelLocationWithCoordinates);
+                        $("#email").val(res.data.hotelEmail);
+                        $("#contact").val(res.data.hotelContactNumber);
+                        $("#fulldouble").val(res.data.fullDbl);
+                        $("#halfdouble").val(res.data.halfDbl);
+                        $("#fulltriple").val(res.data.fullTpl);
+                        $("#halftriple").val(res.data.halfTpl);
+                        $("#cancellation").val(res.data.cancellationCriteria);
+
+                        $("#PackageIdd").val(res.data.packageId);
+
+                        swal("Done!", "success");
+
+                        $(document).on("click", "#deleteGuide", () => {
+                            // if (!validator()) {
+                            //     return swal("Operation failed!", "Please fill all the fields!", "error")
+                            // }
+
+                            if ($("#HotelId").val() === "") {
+                                return swal("OOPS!", "Please enter a Vehicle name to delete!", "error");
+                            }
+
+                            $.ajax({
+                                url: "http://localhost:8085/delete?hotelId=" + $("#HotelId").val(),
+                                method: "DELETE",
+                                headers: {
+                                    "Authorization": "Bearer " + JSON.parse(localStorage.getItem("hotelAuthToken"))
+                                },
+                                success: (res) => {
+                                    console.log(res.data)
+                                    if (res.statusCode === 200 || res.statusCode === 201) {
+                                        addTableField();
+                                        clearFields();
+                                        return swal("Done!", res.message, "success");
+
+
+                                    }
+                                    swal("OOPS!", res.message, "error");
+
+                                },
+                                error: (error) => {
+                                    swal("OOPS!", "An error occurred while communicating with the server ! ", "error");
+                                }
+                            });
+                        })
+
+                    }
+                    swal("OOPS!","error");
+                    clearFields();
+
+                },
+                error: (error) => {
+                    swal("OOPS!", "An error occurred while communicating with the server ! ", "error");
+                }
+            });
+        }
+    })
+});
+
+
+function validator() {
+    if ($("#name").val() === "" || $("#category").val() === "" || $("#location").val() === "" || $("#email").val() === "" || $("#contact").val() === "" || $("#fulldouble").val() === "" || $("#halfdouble").val() === "" || $("#fulltriple").val() === "" || $("#halftriple").val() === "" || $("#cancellation").val() === "") {
+        return false;
+    }
+    return true;
+}
+
+function clearFields() {
+    $("#HotelId").val("");
+    $("#name").val("");
+    $("#category").val("");
+    $("#location").val("");
+    $("#email").val("");
+    $("#contact").val("");
+    $("#fulldouble").val("");
+    $("#halfdouble").val("");
+    $("#fulltriple").val("");
+    $("#halftriple").val("");
+    $("#cancellation").val("");
+    $("#PackageIdd").val("");
+}
+
+$(document).ready(() => {
+    $(document).on("click", "#clearButton", () => {
+        clearFields();
+    })
+})
+
+function  addTableField(){
+    $.ajax({
+        url: "http://localhost:8085/fetchAll",
+        method: "GET",
+        headers: {
+            "Authorization": "Bearer " + JSON.parse(localStorage.getItem("hotelAuthToken"))
+        },
+        success: (res) => {
+
+            var html = "";
+            res.data.forEach(function (hotel , hotelId ,hotelName){
+                hotelId = hotel.vehicleID;
+                hotelName = hotel.vehicleBrand;
+
+
+                html += "<tr>";
+                html += "<td>" + hotel.hotelID + "</td>";
+                html += "<td>" + hotel.hotelName + "</td>";
+                html += "<td>" + hotel.hotelCatageory + "</td>";
+                html += "<td>" + hotel.hotelLocation + "</td>";
+                html += "<td>" + hotel.hotelEmail + "</td>";
+                html += "<td>" + hotel.hotelContactNumber + "</td>";
+                html += "<td>" + hotel.isPetsAllowed + "</td>";
+                html += "<td>" + hotel.cancellationCriteria + "</td>";
+                html += '<td><button onclick="deleteDataa(' + hotelId + ')" class="btn btn-danger">Delete</button><button onclick="UpdateData(' + hotelName + ')" class="btn btn-warning m-2">Edit</button></td>';
+                html += "</tr>";
+            })
+
+            document.querySelector("#crudTable tbody").innerHTML = html;
+
+        }, error: (error) => {
+            swal("OOPS!", "An error occurred while communicating with the server ! ", "error");
+        }
+    })
+}
+
+function getCoordinates(){
+    axios.get("https://geocode.maps.co/search?q="+$("#name").val())
+        .then((res)=>{
+            console.log(res.data[0].lat)
+            $("#hotelLocationWithCoordinates").val("Latitude : "+res.data[0].lat+',Longitude : '+res.data[0].lon)
+
+        })
+        .catch((err)=>{
+            console.log(err)
+            swal("OOPS! ","An error occurred while fetching coordinates!","error");
+
+
+        })
+}
+
+$(document).on("mouseleave","#name",()=>{
+    getCoordinates();
+})
+
+
+
+
+
+
+
+/*
+function saveGuide(){
+        let   IdGuide =$('#IdGuide').val();
+        let   guideName = $("#name").val();
+        let   guideAge = $("#guideAge").val();
+        let   guideAddress = $("#guideAddress").val();
+        let   guideContact = $("#guideContact").val();
+        let   experience = $("#guideContact").val();
+        let   gender = $("#guideGender").val();
+}*/

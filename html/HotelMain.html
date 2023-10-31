@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Form</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewPort" content="width=device=width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/HotelMain.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+<div class="header">
+    <h5><i class="fas fa-guide"></i>Hotel Form...</h5>
+</div>
+<div class="upper-btn-box">
+    <div class=" left-box">
+ <a href="HotelForm.html"><button id="addHotel"><i class="fas fa-plus"></i>&nbsp; Add Hotel</button></a>
+        <button style="background-color: #33B5E6;"><i class="fas fa-eraser" ></i> &nbsp; Clear Filtering</button>
+
+    </div>
+    <div class="right-box"></div>
+    <i class="fas fa-search" id="searchIcon"></i>
+    <input type="text" id="hotelId" placeholder="Enter Hotel Id">
+    <button class="searchBtn">Search</button>
+</div>
+
+
+<div class="table-box" id="table-data">
+    <table>
+        <tr>
+            <th>Hotel Id</th>
+            <th>Hotel Name</th>
+            <th>Category</th>
+            <th>Location</th>
+            <th>Hotel image</th>
+            <th>Hotel Email address</th>
+            <th>Contact Number 2</th>
+            <th>FullBoardRoomDouble</th>
+            <th>HalfBoardRoomDouble</th>
+            <th>FullBoardRoomTriple</th>
+            <th>HalfBoardRoomTriple</th>
+            <th>isPetsAllowed</th>
+            <th>CancellationCriteria</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+            <td>Hello world</td>
+
+            <td>
+                <button><i class="fas fa-eye"></i></button>
+                <button style="background-color: red;"><i class="fas fa-trash"></i></button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<script src="../js/hotel.js"></script>
+</body>
+</html>
