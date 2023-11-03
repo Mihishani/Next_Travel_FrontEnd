@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,400&display=swap');
+
+*{
+    font-family: Gabriola;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 95%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+.container{
+    padding: 40px;
+    position: relative;
+    /*position: absolute;*/
+    /*width: calc(100% - 300px);*/
+    min-height: 100vh;
+    min-width: fit-content;
+    background: linear-gradient(135deg, white, #73C6B6);
+    transition: 0.5s;
+}
+#navbarTogglerDemo02{
+    background: linear-gradient(135deg, white, darkcyan);
+}
+.icon{
+    font-size: 25px;
+    padding-right: 7px;
+}
+
+.title{
+    font-size: 25px;
+}
+
+#GuideId{
+    font-size: 25px;
+    width: 100px;
+}
+
+
+#Submit{
+    background: #117864;
+    color: black;
+    padding: 7px;
+    margin: 5px;
+}
+
+#Update{
+    background: #fd7e14;
+    color: black;
+    padding: 7px;
+    margin: 5px;
+}
+
+#clearButton{
+    background: #0dcaf0;
+    color: black;
+    padding: 7px;
+    margin: 5px;
+}
+
+#deleteGuide{
+    background: #b02a37;
+    color: black;
+    padding: 7px;
+    margin: 5px;
+}

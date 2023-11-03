@@ -4,5 +4,10 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="@fortawesome/fontawesome-free" level="application" />
+    <orderEntry type="library" name="swiper" level="application" />
+    <orderEntry type="library" name="aos" level="application" />
+    <orderEntry type="library" name="boxicons" level="application" />
   </component>
 </module>

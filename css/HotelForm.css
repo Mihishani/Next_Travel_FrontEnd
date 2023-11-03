@@ -599,7 +599,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 130vh;
     margin: 0;
     background: linear-gradient(135deg, white, #73C6B6);
 }
