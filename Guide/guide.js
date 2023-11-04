@@ -1,15 +1,15 @@
-$(document).ready(()=>{
+/*$(document).ready(()=>{
     localStorage.setItem("guideAuthToken",JSON.stringify("eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyUm9sZSI6Ikd1aWRlQWRtaW4iLCJzdWIiOiJVc2VybmFtZSIsImlhdCI6MTY5ODQyNTM3MywiZXhwIjo0ODUyMDI1MzczfQ._5Vzoz7O45RWpAPNhXPNx6VKWbefOeVxb5q-NaRQHrA"))
      $("#GuideId").prop("disabled", true);
     //addTableField();
-});
+});*/
 
 var selectedService = '';
 
 $(document).ready(function(){
-    $('.dataForm #gender-select').click(function(){
+    $('.dataForm #guideGender').click(function(){
 
-        var comboBox = document.getElementById("gender-select");
+        var comboBox = document.getElementById("guideGender");
 
         selectedService = comboBox.options[comboBox.selectedIndex].text;
 
@@ -20,17 +20,15 @@ $(document).ready(function(){
 
 
 function saveGuide(){
-    let guideId= $("#GuideId").val();
-    let guideName= $("#name").val();
-    let  guideAddress= $("#address").val();
-    let guideAge= $("#age").val();
-    let gender= selectedService;
-    let guideContact= $("#contact").val();
-    let guideImageLocation= $("#guideImageLocation").val();
-    let guideNICImageLocation= $("#guideNICImageLocation").val();
-    let guideIDImageLocation =$("#guideIDimageLocation").val();
-    let guideExperience= $("#experience").val();
-    let manDayValue= $("#manDayValue").val()
+    let guideName= $("#guideName").val();
+    let guideAddress= $("#guideAddress").val();
+    let  guideAge= $("#guideAge").val();
+    let  guideGender= selectedService;
+    let  guidePICIMGLocation= $("#guidePICIMGLocation").val();
+    let  guideNICIMGLocation= $("#guideNICIMGLocation").val();
+    let  guideIDIMGLocation =$("#guideIDIMGLocation").val();
+    let  guideExperience= $("#guideExperience").val();
+    let  manDayValue= $("#manDayValue").val()
 
     $.ajax({
         method:"POST",
@@ -38,15 +36,14 @@ function saveGuide(){
         url:"http://localhost:8085/guide/Gsave",
         async:true,
         data:JSON.stringify({
-            "guideId": "",
+            "guideID": "",
             "guideName": guideName,
             "guideAddress":guideAddress,
             "guideAge":  guideAge,
-            "gender" : gender,
-            "guideContact": guideContact,
-            "guideImageLocation" :guideImageLocation,
-            "guideNICImageLocation" :guideNICImageLocation,
-            "guideIDImageLocation" : guideIDImageLocation,
+            "guideGender" : guideGender,
+            "guidePICIMGLocation" : guidePICIMGLocation,
+            "guideNICIMGLocation" : guideNICIMGLocation,
+            "guideIDIMGLocation" :  guideIDIMGLocation,
             "guideExperience" :  guideExperience,
             "manDayValue" : manDayValue
         }),

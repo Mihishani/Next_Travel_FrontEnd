@@ -1,3 +1,4 @@
+/*
 $(document).ready(()=>{
     localStorage.setItem("userToken",JSON.stringify("eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyUm9sZSI6IlVBIiwic3ViIjoiZGFtaWFuIiwiaWF0IjoxNjk4MDQxMDY0LCJleHAiOjQ4NTE2NDEwNjR9.QG68GCMTuVWxPmU4JcuB1qHP7OzDhuw418bSQVqJnpU"))
     $("#UserId").prop("disabled", true);
@@ -30,7 +31,7 @@ $(document).ready(() => {
             }
 
             $.ajax({
-                url: "http://localhost:8080/api/v1/auth/register",
+                url: "http://localhost:8080/api/v1/auth/getAuth",
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -53,7 +54,7 @@ $(document).ready(() => {
     })
 });
 
-// update
+/!*!// update
 $(document).ready(() => {
     $(document).on("click", "#Update", () => {
         if (!validator()) {
@@ -99,7 +100,8 @@ $(document).ready(() => {
             })
         },5000)
     })
-});
+});*!/
+/!*
 
 //search
 $(document).ready(() => {
@@ -180,6 +182,7 @@ $(document).ready(() => {
         })
 
 });
+*!/
 
 
 
@@ -211,6 +214,7 @@ function clearFields() {
     $("#userimageLocation").val("");
 
 }
+/!*
 
 function  addTableField(){
     $.ajax({
@@ -245,4 +249,5 @@ function  addTableField(){
             swal("OOPS!", "An error occurred while communicating with the server ! ", "error");
         }
     })
-}
+}*!/
+*/

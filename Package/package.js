@@ -1,3 +1,4 @@
+/*
 $(document).ready(()=>{
     localStorage.setItem("packageAuthToken",JSON.stringify("eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyUm9sZSI6IlBBIiwic3ViIjoibWFsaXRoaSIsImlhdCI6MTY5ODA0MDkwNSwiZXhwIjo0ODUxNjQwOTA1fQ.I-0C7nqNmU22YEifSWvVLgtbrynlh61TZfPy98NHlmU"))
     $("#PackageId").prop("disabled", true);
@@ -250,4 +251,4 @@ function  addTableField(){
             swal("OOPS!", "An error occurred while communicating with the server ! ", "error");
         }
     })
-}
+}*/

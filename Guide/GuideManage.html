@@ -15,7 +15,7 @@
 <!--    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   -->  <link rel="stylesheet" href="GuideManage.css">
     <title>Guide Manage Form</title>
-<script src="jquery-3.7.1.min.js"></script>
+<script src="../jquery-3.7.1.min.js"></script>
 </head>
 <body>
 
@@ -53,55 +53,55 @@
     <div class="dataForm">
         <span class="icon"><i class="fa fa-male" aria-hidden="true"></i></span>
         <span class="title">Guide</span>
-        <input type="text" disabled name="id" id="GuideId" placeholder="GuideId">
+        <input type="text" disabled name="id" id="guideID" placeholder="GuideId">
 <!--        <span class="guideId" id="guideId">G007</span>-->
         <br><br>
         <div class="row">
             <div class="form-group col-md-6 mb-3">
                 <label>Guide Name</label>
-                <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name">
+                <input type="text" name="name" class="form-control" id="guideName" placeholder="Enter Name">
             </div>
 
             <div class="form-group col-md-6 mb-3">
                 <label>Guide Address</label>
-                <input type="text" name="address" class="form-control" id="address" placeholder="Enter Address">
+                <input type="text" name="address" class="form-control" id="guideAddress" placeholder="Enter Address">
             </div>
 
             <div class="form-group col-md-6 mb-3">
                 <label>Guide Age</label>
-                <input type="text" name="age" class="form-control" id="age" placeholder="Enter Age">
+                <input type="text" name="age" class="form-control" id="guideAge" placeholder="Enter Age">
             </div>
 
             <div class="form-group col-md-6 mb-3">
                 <label>Guide gender</label>
-                <select id="gender-select">
+                <select id="guideGender">
                     <option value="Female">Female</option>
                     <option value="Male">Male</option>
                 </select>
             </div>
 
-            <div class="form-group col-md-6 mb-3">
+       <!--     <div class="form-group col-md-6 mb-3">
                 <label>Guide Contact</label>
                 <input type="text" name="contact" class="form-control" id="contact" placeholder="Enter Contact No">
+            </div>-->
+
+            <div class="form-group col-md-6 mb-3">
+                <label for="guidePICIMGLocation" class="form-label">Guide Image</label>
+                <input type="file" class="form-control" id="guidePICIMGLocation" placeholder="">
             </div>
 
             <div class="form-group col-md-6 mb-3">
-                <label for="guideImageLocation" class="form-label">Guide Image</label>
-                <input type="file" class="form-control" id="guideImageLocation" placeholder="">
+                <label for="guideNICIMGLocation" class="form-label">Guide NIC Image</label>
+                <input type="file" class="form-control" id="guideNICIMGLocation" placeholder="">
             </div>
 
             <div class="form-group col-md-6 mb-3">
-                <label for="guideNICImageLocation" class="form-label">Guide NIC Image</label>
-                <input type="file" class="form-control" id="guideNICImageLocation" placeholder="">
-            </div>
-
-            <div class="form-group col-md-6 mb-3">
-                <label for="guideIDimageLocation" class="form-label">Guide ID Image</label>
-                <input type="file" class="form-control" id="guideIDimageLocation" placeholder="">
+                <label for="guideIDIMGLocation" class="form-label">Guide ID Image</label>
+                <input type="file" class="form-control" id="guideIDIMGLocation" placeholder="">
             </div>
             <div class="form-group col-md-6 mb-3">
                 <label>Guide Experience</label>
-                <input type="text" name="experience" class="form-control" id="experience" placeholder="Enter Guide Experience">
+                <input type="text" name="guideExperience" class="form-control" id="guideExperience" placeholder="Enter Guide Experience">
             </div>
 
             <div class="form-group col-md-2 mb-3">

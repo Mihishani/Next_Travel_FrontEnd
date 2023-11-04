@@ -1,3 +1,4 @@
+/*
 $(document).ready(()=>{
     localStorage.setItem("hotelAuthToken",JSON.stringify("eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyUm9sZSI6IkhBIiwic3ViIjoiYW5qYWxpIiwiaWF0IjoxNjk4MDQwNDA0LCJleHAiOjQ4NTE2NDA0MDR9.brJ8SaiTCsLYNmyJDADNV_hOCWcQ8GZx7lFdX1WqwTc"))
     $("#HotelId").prop("disabled", true);
@@ -418,3 +419,4 @@ $(document).on("mouseleave","#name",()=>{
 
 
 
+*/

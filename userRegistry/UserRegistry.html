@@ -3,8 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <title>User Register</title>
-    <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="../userRegistry/user.css">
     <link name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,400&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins' ,sans-serif;
+        }
+
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, white, #73C6B6);
+        }
+        .container{
+            max-width: 700px;
+            width: 100%;
+            background: #fff;
+            padding: 25px 30px;
+            border-radius: 5px;
+        }
+        .container .title{
+            font-size: 25px;
+            font-weight:500;
+            position: relative;
+        }
+        .container .title::before{
+            content: '';
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            height: 3px;
+            width: 30px;
+            background: linear-gradient(135deg, white, #73C6B6);
+        }
+        .container form .user-details{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0 12px 0;
+        }
+        form .user-details .input-box{
+            margin-bottom: 15px;
+            width:calc(100% / 2 - 20px) ;
+        }
+        .user-details .input-box .details{
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .user-details .input-box input{
+            height: 45px;
+            width: 100%;
+            outline: none;
+            border-radius: 5px;
+            border:1px solid #ccc ;
+            padding-left: 15px;
+            font-size: 16px;
+            border-bottom-width: 2px;
+            transition: all 0.3s ease;
+        }
+        .user-details .input-box input:focus,
+        .user-details .input-box input:focus{
+            border-color:#0E6655 ;
+        }
+
+        form .Gender-Details .gender-title{
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        form .Gender-Details .category{
+            display: flex;
+            width: 80%;
+            margin: 14px 0;
+            justify-content: space-between;
+        }
+
+        .Gender-Details .category label{
+            display: flex;
+            align-items: center;
+        }
+
+        .Gender-Details .category .dot{
+            height: 18px;
+            width: 18px;
+            background: #d9d9d9;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 5px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        #dot-1:checked ~ .category label .one,
+        #dot-2:checked ~ .category label .two,
+        #dot-3:checked ~ .category label .three{
+            border-color: #d9d9d9;
+            background: #117864;
+        }
+
+        form input[type="radio"]{
+            display: none;
+        }
+
+        form .button{
+            height: 45px;
+            margin: 45px 0;
+        }
+
+        form .button input{
+            height: 100%;
+            width: 100%;
+            outline: none;
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            font-weight: 500;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            background:linear-gradient(135deg, #73C6B6, #117864) ;
+        }
+
+        form .button input:hover{
+            background:linear-gradient(135deg, #117864, white) ;
+        }
+
+        @media (max-width: 584px) {
+            .container{
+                max-width:100% ;
+            }
+            form .user-details .input-box{
+                margin-bottom: 15px;
+                width: 100%;
+            }
+            form .Gender-Details .category{
+                width: 100%;
+            }
+            .container form .user-details{
+                max-height: 300px;
+                overflow-y:scroll ;
+            }
+            .user-details::-webkit-scrollbar{
+                width: 0;
+            }
+
+
+
+
+
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -12,65 +168,62 @@
         <form action="#">
           <div class="user-details">
               <div class="input-box">
+                  <span class="details">UserId</span>
+                  <input type="text" id="userId" disabled placeholder=" " required>
+              </div>
+              <div class="input-box">
                   <span class="details">Full Name</span>
-                  <input type="text" placeholder="Enter your name" required>
+                  <input type="text" id="name" placeholder="Enter your name" required>
+              </div>
+              <div class="input-box">
+                  <span class="details">User role</span>
+                  <input type="text" id="userRole" placeholder="Enter your name" required>
+              </div>
+              <div class="input-box">
+                  <span class="details">User name</span>
+                  <input type="text" id="userName" placeholder="Enter your name" required>
               </div>
               <div class="input-box">
                   <span class="details">Email</span>
-                  <input type="text" placeholder="Enter your Email" required>
+                  <input type="text" id="userEmail" placeholder="Enter your Email" required>
               </div>
               <div class="input-box">
                   <span class="details">Password</span>
-                  <input type="text" placeholder="Enter password" required>
+                  <input type="text" id="userPassword" placeholder="Enter password" required>
               </div>
               <div class="input-box">
                   <span class="details">NIC</span>
-                  <input type="text" placeholder="Enter your NIC" required>
+                  <input type="text" id="userNIC" placeholder="Enter your NIC" required>
               </div>
               <div class="input-box">
                   <span class="details">Address</span>
-                  <input type="text" placeholder="Enter your address" required>
+                  <input type="text" id="userAddress" placeholder="Enter your address" required>
               </div>
               <div class="input-box">
                   <span class="details">Date Of Birth</span>
-                  <input type="text" placeholder="Enter your DOB" required>
+                  <input type="text" id="userAge" placeholder="Enter your DOB" required>
               </div>
               <div class="input-box">
                   <span class="details">Telephone Number</span>
-                  <input type="text" placeholder="Enter your PhoneNumber" required>
+                  <input type="text" id="userPhone" placeholder="Enter your PhoneNumber" required>
               </div>
               <div class="input-box">
                   <span class="details">Your Image</span>
-                  <input type="file" class="form-control" id="travelerProfilePicture" name="travelerProfilePicture" accept="image/*" required>
+                  <input type="file" class="form-control" id="userImageLocation" accept="image/*" required>
+              </div>
+              <div class="input-box">
+                  <span class="details">Gender</span>
+                  <input type="text" id="gender" placeholder="Enter your gender" required>
               </div>
           </div>
 
-            <div class="Gender-Details">
-                <input type="radio" name="gender" id="dot-1">
-                <input type="radio" name="gender" id="dot-2">
-                <input type="radio" name="gender" id="dot-3">
-                <span class="gender-title">Gender</span>
-                <div class="category">
-                    <label for="dot-1">
-                        <span class="dot one"></span>
-                        <span class="Gender">Male</span>
-                    </label>
-                    <label for="dot-2">
-                        <span class="dot two"></span>
-                        <span class="Gender">Female</span>
-                    </label>
-                    <label for="dot-3">
-                        <span class="dot three"></span>
-                        <span class="Gender">Prefer not to say</span>
-                    </label>
-                </div>
-            </div>
             <div class="button">
-                <input type="submit" value="Register">
+                <input type="button" onclick="RegisterUser()"  value="Register">
 
             </div>
         </form>
     </div>
-
+    <script src="../jquery-3.7.1.min.js"></script>
+<script src="../userRegistry/user.js"></script>
 </body>
 </html>

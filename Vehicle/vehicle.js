@@ -1,3 +1,4 @@
+/*
 $(document).ready(()=>{
     localStorage.setItem("vehicleAuthToken",JSON.stringify("eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyUm9sZSI6IlZBIiwic3ViIjoia2FzdW4iLCJpYXQiOjE2OTgwNDA3NzYsImV4cCI6NDg1MTY0MDc3Nn0.Kfy3AZzucGGRjveWQTW0azWpxYziJ3xEmY25LuL41N8"))
     $("#VehicleId").prop("disabled", true);
@@ -398,4 +399,4 @@ function  addTableField(){
             swal("OOPS!", "An error occurred while communicating with the server ! ", "error");
         }
     })
-}
+}*/

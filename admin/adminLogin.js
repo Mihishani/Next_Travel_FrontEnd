@@ -49,9 +49,23 @@ function validateLogin() {
     var adminUsernamefour = "vehicle";
     var adminPasswordfour = "vehicle123";
 
-    if (username === adminUsernamethree && password === adminPasswordthree) {
+    if (username === adminUsernamefour && password ===  adminPasswordfour) {
         // Redirect to the admin panel or any other admin-related page
         window.location.href = "../Vehicle/VehicleDashBoard.html";
+    } else {
+        // Display an error message for invalid login attempts
+        errorMessage.textContent = "Invalid username or password. Please try again.";
+        errorMessage.style.color = "red";
+        // Clear the password field
+        document.getElementById("password").value = "";
+    }
+
+    var adminUsernamefive = "user";
+    var adminPasswordfive   = "user123";
+
+    if (username ===  adminUsernamefive && password ===  adminPasswordfive) {
+        // Redirect to the admin panel or any other admin-related page
+        window.location.href = "../User/UserDashBoard.html";
     } else {
         // Display an error message for invalid login attempts
         errorMessage.textContent = "Invalid username or password. Please try again.";
